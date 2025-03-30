@@ -13,10 +13,11 @@
       <ion-title size="large">Quiz</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div *ngIf="currentElement">
-    <h2>{{ currentElement.title }}</h2>
-
+  <ion-item>
+    <ion-label>
+      {{ currentElement.title }}
+    </ion-label>
+  </ion-item>
     <ion-button expand="block" (click)="checkAnswer('a1')">
       {{ currentElement.a1 }}
     </ion-button>
@@ -32,5 +33,4 @@
     <ion-button expand="block" (click)="checkAnswer('a4')">
       {{ currentElement.a4 }}
     </ion-button>
-  </div>
 </ion-content>
