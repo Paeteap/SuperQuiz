@@ -1,0 +1,7 @@
+{
+  "name": "SuperQuiz",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

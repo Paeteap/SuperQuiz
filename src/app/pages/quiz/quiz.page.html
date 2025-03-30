@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Quiz</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/question-list"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Quiz</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div *ngIf="currentElement">
+    <h2>{{ currentElement.title }}</h2>
+
+    <ion-button expand="block" (click)="checkAnswer('a1')">
+      {{ currentElement.a1 }}
+    </ion-button>
+
+    <ion-button expand="block" (click)="checkAnswer('a2')">
+      {{ currentElement.a2 }}
+    </ion-button>
+
+    <ion-button expand="block" (click)="checkAnswer('a3')">
+      {{ currentElement.a3 }}
+    </ion-button>
+
+    <ion-button expand="block" (click)="checkAnswer('a4')">
+      {{ currentElement.a4 }}
+    </ion-button>
+  </div>
+</ion-content>

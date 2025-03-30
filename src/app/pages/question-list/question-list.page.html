@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Fragen</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="show('0')">
+        <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Fragen:</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list>
+    @for (q of data.currentQuiz.questions; track q.id) {
+      <ion-item-sliding>
+        <ion-item (click)="show(q.id)">
+          <ion-label>
+            {{q.title}}
+          </ion-label>  
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="danger" (click)="delete(q)">
+            Delete
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    }
+    
+    
+  </ion-list>
+</ion-content>
